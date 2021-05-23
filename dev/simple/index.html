@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div>
+      <h1 id="title">Hello</h1>
+    </div>
+
+    <a href="about.html">to about</a>
+    <a href="http://google.com">to google</a>
+
+    <a href="/contact">to contact</a>
+
+    <div>is SSR: <span id="my-span"></span></div>
+
+    <!-- will be executed during SSR and client side -->
+    <script src="/js/script.js"></script>
+
+    <!-- will not be executed during SSR -->
+    <script noSSR src="http://localhost:8080/nonexisting.js"></script>
+
+    <!-- will only be executed during SSR (will be removed in the final site) -->
+    <script SSROnly src="http://localhost:8080/nonexisting.js"></script>
+
+    <!-- inline scripts with "noSSR" have no effect (include the script with src="" instead) -->
+    <script noSSR>
+      const hello = document.getElementById('title')
+      hello.style.color = 'red'
+    </script>
+
+    <!-- will only be executed during SSR (will be removed in the final site) -->
+    <script SSROnly>
+      const hello = document.getElementById('title')
+      hello.style.color = 'red'
+    </script>
+    <script>
+      // dynamically decide what to do
+      const isSSR = window.isSRR
+
+      const span = document.getElementById('my-span')
+      span.innerText = `${typeof isSSR} - ${isSSR}`
+    </script>
+  </body>
+</html>

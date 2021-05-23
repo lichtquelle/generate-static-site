@@ -1,0 +1,7 @@
+coverage
+dev/www
+lib
+node_modules
+tmp
+www
+package-lock.json

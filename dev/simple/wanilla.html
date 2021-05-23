@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script SSROnly src="https://unpkg.com/wanilla/bundle/wanilla.min.js"></script>
+    <title>Wanilla Include Test</title>
+  </head>
+  <body>
+    <include-html src="/menu/menu.html"></include-html>
+
+    <h1>Wanilla Page</h1>
+    <p>About Wanilla...</p>
+
+    <script SSROnly>
+      window.addEventListener('load', () => {
+        W('h1').css.set('color', 'red')
+        W.autoInclude()
+      })
+    </script>
+  </body>
+</html>
