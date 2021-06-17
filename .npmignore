@@ -1,6 +1,7 @@
 .github
 coverage
 dev
+cjs
 node_modules
 src
 test

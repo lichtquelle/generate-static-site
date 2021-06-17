@@ -1,4 +1,4 @@
-const { render } = require('../lib/render')
+const { render } = require('../cjs/render')
 const { readFileSync } = require('fs')
 const { join } = require('path')
 

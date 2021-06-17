@@ -1,6 +1,7 @@
 coverage
 dev/www
 lib
+cjs
 node_modules
 tmp
 www
