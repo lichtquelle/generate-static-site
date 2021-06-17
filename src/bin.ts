@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { RenderOptions } from './types'
 import { gui } from './gui'
 import { parseRegex } from './parseRegex'
 import { render } from './index'
@@ -15,6 +16,7 @@ const args = process.argv.slice(2)
 let allow: RegExp[] | undefined
 let block: RegExp[] | undefined
 const entries: string[] = []
+let options: RenderOptions = {}
 
 // GUI
 if (args.length === 0) {
@@ -37,6 +39,9 @@ else {
         .split(',')
         .map(a => parseRegex(a))
       args.splice(i, 1)
+    } else if (arg.indexOf('--no-follow') > -1) {
+      options = { ...options, follow: false }
+      args.splice(i, 1)
     } else {
       entries.push(arg)
       args.splice(i, 1)
@@ -45,5 +50,5 @@ else {
 
   const [input = 'src', output = 'www'] = args
 
-  render(input, output, allow, block, entries)
+  render(input, output, allow, block, entries, options)
 }

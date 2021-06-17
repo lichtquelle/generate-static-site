@@ -89,6 +89,7 @@ ARGUMENTS
 OPTIONS
   --allow=<regex...>      List of allowed resources as RegEx, separated by commas
   --block=<regex...>      List of blocked resources as RegEx, separated by commas
+  --no-follow             Don't follow internal links
 
 GUI
   Run "npx generate-static-site" without arguments or options to display an easy to use step-by-step graphical interface
