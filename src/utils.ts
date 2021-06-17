@@ -11,8 +11,8 @@ export const error = (msg: string) => {
 }
 
 export const exitWithError = (msg?: string) => {
-  if (msg) _error(msg)
-  else _error('Usage: publish <output> <url> <...entries>')
+  if (msg) _error(msg, false)
+  else _error('Usage: publish <output> <url> <...entries>', false)
 
   process.exit(1)
 }
