@@ -1,10 +1,10 @@
 /* eslint-disable sort-imports */
 import { hideCursor, question, showCursor } from 'node-cli'
-import { render as r, h } from 'node-cli/lib/jsx/core'
-import { Write } from 'node-cli/lib/jsx/components'
+import { render as r, h } from 'node-cli/lib/jsx/core.js'
+import { Write } from 'node-cli/lib/jsx/components/index.js'
 
 import readline from 'readline'
-import { render } from './render'
+import { render } from './render.js'
 
 export const gui = async () => {
   readline.emitKeypressEvents(process.stdin)

@@ -1,13 +1,13 @@
 /* eslint-disable sort-imports */
 import { comment, step, success } from 'node-cli'
-import { exitWithError, error, trim } from './utils'
-import { exitServe, startServe } from './serve'
-import { crawl } from './crawl'
+import { exitWithError, error, trim } from './utils.js'
+import { exitServe, startServe } from './serve.js'
+import { crawl } from './crawl.js'
 import fs from 'fs/promises'
 import path from 'path'
 import puppeteer from 'puppeteer'
-import { copyResources } from './copyResources'
-import { RenderOptions } from './types'
+import { copyResources } from './copyResources.js'
+import { RenderOptions } from './types.js'
 
 export const render = async (
   input: string,

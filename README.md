@@ -11,6 +11,13 @@
 
   <p><i>Still in development. Many features will be added in the future!</i></p>
 
+  <p align="center">  
+  <a href="https://www.npmjs.com/package/generate-static-site"><img src="https://img.shields.io/npm/v/generate-static-site?style=flat-square" alt="NPM version"></a>
+  <a href="https://github.com/lichtquelle/generate-static-site/actions?query=workflow%3ACI"><img src="https://img.shields.io/github/workflow/status/lichtquelle/generate-static-site/CI/main?label=build&logo=github&style=flat-square"></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/built%20with-TypeScript-blue?style=flat-square"></a>
+  <a href="https://github.com/yandeu/yandeu/blob/main/posts/2020-05-28-esm-for-nodejs.md"><img src="https://img.shields.io/badge/Node.js-ES%20Modules-F7DF1E?style=flat-square" alt="ES Modules Badge"></a>
+</p>
+
 </div>
 
 <hr>

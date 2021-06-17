@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express'
 import path from 'path'
-import { render } from '../render'
+import { render } from '../render.js'
 
 // copied and modified from https://github.com/yandeu/five-server/blob/main/src/middleware/cache.ts
 const _cache: Map<string, { timestamp: number; file: string }> = new Map()

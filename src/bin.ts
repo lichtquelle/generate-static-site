@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { RenderOptions } from './types'
-import { gui } from './gui'
-import { parseRegex } from './parseRegex'
-import { render } from './index'
+import { RenderOptions } from './types.js'
+import { gui } from './gui.js'
+import { parseRegex } from './parseRegex.js'
+import { render } from './index.js'
 
 /**
  * npx generate-static-site INPUT(url or folder) OUTPUT(folder) ...ENTRIES --allow=/test/i,/yes/i --block=/tst/i,/no/i

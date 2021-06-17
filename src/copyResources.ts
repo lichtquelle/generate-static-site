@@ -1,6 +1,6 @@
 import { comment, error } from 'node-cli'
 import fs from 'fs'
-import { nodeFetch } from './dependencies/node-fetch'
+import { nodeFetch } from './dependencies/node-fetch.js'
 import path from 'path'
 
 const done: string[] = []

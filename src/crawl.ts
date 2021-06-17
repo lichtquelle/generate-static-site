@@ -1,8 +1,8 @@
 import puppeteer, { Page } from 'puppeteer'
-import { error } from './utils'
-import { minify } from 'html-minifier-terser'
-import { pageFunction } from './pageFunction'
-import path from 'path'
+import { error } from './utils.js'
+// import { minify } from 'html-minifier-terser'
+import { pageFunction } from './pageFunction.js'
+// import path from 'path'
 
 // https://github.com/puppeteer/puppeteer/issues/2138
 const windowSet = (page: Page, name: string, value: any) =>

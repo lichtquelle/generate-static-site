@@ -5,6 +5,7 @@
   "bin": "lib/bin.js",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "start": "npm run dev",
     "dev": "npm run clean && npm run build && npm-run-all --parallel dev:*",
@@ -12,12 +13,13 @@
     "dev:serve": "serve dev/src",
     "www:serve": "serve dev/www",
     "build": "npm run clean && npm run version && tsc",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
     "format:check": "prettier --check src/**/*",
     "format": "prettier --write src/**/*",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint --fix src --ext .ts,.tsx",
     "clean": "rimraf lib www",
-    "test": "rimraf www && jest",
+    "test": "rimraf www && npm run build:cjs && jest",
     "version": "extract version src/version.ts && prettier --write src/version.ts",
     "render:server": "rimraf www && node lib/bin.js http://localhost:5000 www",
     "render:simple": "rimraf www && node lib/bin.js dev/simple www",
@@ -60,7 +62,7 @@
     "@yandeu/prettier-config": "^0.0.2",
     "eslint": "^7.22.0",
     "express": "^4.17.1",
-    "jest": "^26.6.3",
+    "jest": "^27.0.4",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.0",
@@ -70,7 +72,7 @@
     "typescript": "^4.2.3"
   },
   "engines": {
-    "node": ">=12"
+    "node": "^14.15 || >=16"
   },
   "funding": {
     "url": "https://github.com/sponsors/yandeu"
