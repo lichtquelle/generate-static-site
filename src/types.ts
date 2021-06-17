@@ -1,4 +1,6 @@
 export interface RenderOptions {
+  // execute custom JavaScrip
+  exec?: string[]
   // crawl detected links
   follow?: boolean
   // copy resources to the output directory

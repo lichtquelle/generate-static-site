@@ -22,7 +22,13 @@ const matchInArrayOfRegExp = (str: string, expressions: RegExp[]) => {
   return false
 }
 
-export const crawl = async (page: puppeteer.Page, url: string, allowList: RegExp[], blockList: RegExp[]) => {
+export const crawl = async (
+  page: puppeteer.Page,
+  url: string,
+  allowList: RegExp[],
+  blockList: RegExp[],
+  exec: string[] = []
+) => {
   const verbose = false
 
   try {
@@ -98,6 +104,24 @@ export const crawl = async (page: puppeteer.Page, url: string, allowList: RegExp
     await windowSet(page, 'isSRR', true)
 
     await page.goto(url, { waitUntil: 'networkidle0' })
+
+    // execute custom JavaScript
+    for (const e of exec) {
+      await page.evaluate(e)
+    }
+
+    // inject custom javascript (as function)
+    // const handle = () => {
+    //   const title = document.getElementById('title')
+    //   if (title) title.remove()
+    // }
+    // await page.evaluate(handle)
+
+    // inject custom javascript (as string)
+    // await page.evaluate(`
+    //   const title = document.getElementById('title')
+    //   if (title) title.remove()
+    // `)
 
     // remove "SSROnly" resources
     await page

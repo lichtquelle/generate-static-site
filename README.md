@@ -89,6 +89,7 @@ ARGUMENTS
 OPTIONS
   --allow=<regex...>      List of allowed resources as RegEx, separated by commas
   --block=<regex...>      List of blocked resources as RegEx, separated by commas
+  --exec=<string>         Execute custom JavaScript
   --no-follow             Don't follow internal links
 
 GUI
@@ -122,7 +123,13 @@ npx generate-static-site http://localhost:8080 www contact
 npx generate-static-site --allow=/\.js$/
 
 # prevent only google analytics from being executed during rendering
-npx generate-static-site --block=/google-analytics\.com/
+[...] --block=/google-analytics\.com/
+
+# execute custom JavaScript (remove title)
+[...] --exec="const title = document.getElementById('title');if (title) title.remove();"
+
+# execute custom JavaScript (change background color)
+[...] --exec="const wrapper = document.getElementById('wrapper');if (wrapper) wrapper.style.backgroundColor = 'blue'"
 ```
 
 ---
