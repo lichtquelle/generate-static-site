@@ -27,12 +27,15 @@ export const crawl = async (
   url: string,
   allowList: RegExp[],
   blockList: RegExp[],
-  exec: string[] = []
+  exec: string[] = [],
+  javaScriptEnabled: boolean = true
 ) => {
   const verbose = false
 
   try {
     await page.setRequestInterception(true)
+
+    if (!javaScriptEnabled) await page.setJavaScriptEnabled(false)
 
     // inline style sheets
     const stylesheetContents: any = {}

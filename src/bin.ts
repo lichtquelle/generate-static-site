@@ -16,7 +16,7 @@ const args = process.argv.slice(2)
 let allow: RegExp[] | undefined
 let block: RegExp[] | undefined
 const entries: string[] = []
-let options: RenderOptions = { exec: [], copy: true }
+let options: RenderOptions = { exec: [], copy: true, javaScriptEnabled: true }
 
 // GUI
 if (args.length === 0) {
@@ -44,6 +44,9 @@ else {
       args.splice(i, 1)
     } else if (arg.indexOf('--no-follow') > -1) {
       options = { ...options, follow: false }
+      args.splice(i, 1)
+    } else if (arg.indexOf('--no-javascript') > -1) {
+      options = { ...options, javaScriptEnabled: false }
       args.splice(i, 1)
     } else if (arg.indexOf('--exec=') > -1) {
       const script = arg.substring(7)

@@ -97,6 +97,7 @@ OPTIONS
   --exec=<string>         Execute custom JavaScript
   --no-copy               Don't copy any resources
   --no-follow             Don't follow internal links
+  --no-javascript         Disable JavaScript
 
 GUI
   Run "npx generate-static-site" without arguments or options to display an easy to use step-by-step graphical interface

@@ -25,7 +25,7 @@ export const render = async (
   entries: string[] = ['/'],
   options: RenderOptions = {}
 ) => {
-  const { exec = [], follow = true, copy = true, write = true, silent = false } = options
+  const { exec = [], follow = true, copy = true, write = true, silent = false, javaScriptEnabled = true } = options
 
   let _filePath = ''
   /** stores the rendered html pages if options "write" is set to false */
@@ -91,7 +91,7 @@ export const render = async (
     // crawl the page
     const _url = trim(`${input}/${page}`)
 
-    const { html, resources } = await crawl(browserTab, _url, allow, block, exec).catch(err =>
+    const { html, resources } = await crawl(browserTab, _url, allow, block, exec, javaScriptEnabled).catch(err =>
       exitWithError(err.message)
     )
 

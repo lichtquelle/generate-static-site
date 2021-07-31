@@ -9,4 +9,6 @@ export interface RenderOptions {
   write?: boolean
   // don't print anything to the console
   silent?: boolean
+  // whether or not to enable JavaScript
+  javaScriptEnabled?: boolean
 }
