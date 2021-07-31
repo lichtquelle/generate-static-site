@@ -9,8 +9,6 @@
 
   <p>Generate Static HTML Files from your Local Files or a Web Server.</p>
 
-  <p><i>Still in development. Many features will be added in the future!</i></p>
-
   <p align="center">  
   <a href="https://www.npmjs.com/package/generate-static-site"><img src="https://img.shields.io/npm/v/generate-static-site?style=flat-square" alt="NPM version"></a>
   <a href="https://github.com/lichtquelle/generate-static-site/actions?query=workflow%3ACI"><img src="https://img.shields.io/github/workflow/status/lichtquelle/generate-static-site/CI/main?label=build&logo=github&style=flat-square"></a>
@@ -127,7 +125,7 @@ npx generate-static-site https://my-website.com www
 npx generate-static-site http://localhost:8080 www contact
 
 # allows to only fetch .js files during ssr
-npx generate-static-site --allow=/\.js$/
+[...] --allow=/\.js$/
 
 # prevent only google analytics from being executed during rendering
 [...] --block=/google-analytics\.com/
@@ -136,7 +134,7 @@ npx generate-static-site --allow=/\.js$/
 [...] --exec="const title = document.getElementById('title');if (title) title.remove();"
 
 # execute custom JavaScript (change background color)
-[...] --exec="const wrapper = document.getElementById('wrapper');if (wrapper) wrapper.style.backgroundColor = 'blue'"
+[...] --exec="const wrapper = document.getElementById('wrapper');if (wrapper) wrapper.style.backgroundColor = 'blue';"
 ```
 
 ---
