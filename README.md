@@ -95,6 +95,7 @@ OPTIONS
   --allow=<regex...>      List of allowed resources as RegEx, separated by commas
   --block=<regex...>      List of blocked resources as RegEx, separated by commas
   --exec=<string>         Execute custom JavaScript
+  --no-copy               Don't copy any resources
   --no-follow             Don't follow internal links
 
 GUI

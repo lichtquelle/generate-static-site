@@ -16,7 +16,7 @@ const args = process.argv.slice(2)
 let allow: RegExp[] | undefined
 let block: RegExp[] | undefined
 const entries: string[] = []
-let options: RenderOptions = { exec: [] }
+let options: RenderOptions = { exec: [], copy: true }
 
 // GUI
 if (args.length === 0) {
@@ -38,6 +38,9 @@ else {
         .substring(8)
         .split(',')
         .map(a => parseRegex(a))
+      args.splice(i, 1)
+    } else if (arg.indexOf('--no-copy') > -1) {
+      options = { ...options, copy: false }
       args.splice(i, 1)
     } else if (arg.indexOf('--no-follow') > -1) {
       options = { ...options, follow: false }
