@@ -1,6 +1,6 @@
 {
   "name": "generate-static-site",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "🤖 Generate a Static HTML Site from your Local Files or a Web Server. (Sometimes referred as server side rendering or pre-rendering)",
   "bin": "lib/bin.js",
   "main": "lib/index.js",
